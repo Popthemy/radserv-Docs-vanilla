@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthTech Pro - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="#84cc16"/>
+                        <path d="M16 8v16M8 16h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>HealthTech Pro</span>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation..." class="search-input">
+                    <button class="search-btn" onclick="performSearch()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M19 19l-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="#support" class="nav-link">Support</a>
+                </nav>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu">
+            <a href="documentation.html" class="mobile-nav-link">Documentation</a>
+            <a href="#features" class="mobile-nav-link">Features</a>
+            <a href="#support" class="mobile-nav-link">Support</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Documentation</h3>
+                        <button class="sidebar-toggle" onclick="toggleSidebar()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-content">
+                        <!-- Getting Started -->
+                        <div class="nav-section">
+                            <button class="nav-section-header" onclick="toggleSection('getting-started')">
+                                <span>Getting Started</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="nav-section-content" id="getting-started">
+                                <a href="#quick-start" class="nav-item" data-category="getting-started" data-tags="setup,installation">Quick Start Guide</a>
+                                <a href="#system-requirements" class="nav-item" data-category="getting-started" data-tags="requirements,compatibility">System Requirements</a>
+                                <a href="#installation" class="nav-item" data-category="getting-started" data-tags="install,setup">Installation Process</a>
+                            </div>
+                        </div>
+
+                        <!-- User Management -->
+                        <div class="nav-section">
+                            <button class="nav-section-header" onclick="toggleSection('user-management')">
+                                <span>User Management</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="nav-section-content" id="user-management">
+                                <a href="#user-roles" class="nav-item" data-category="user-management" data-tags="roles,permissions,access">User Roles & Permissions</a>
+                                <a href="#account-setup" class="nav-item" data-category="user-management" data-tags="account,profile,setup">Account Setup</a>
+                                <a href="#password-management" class="nav-item" data-category="user-management" data-tags="password,security,reset">Password Management</a>
+                            </div>
+                        </div>
+
+                        <!-- Patient Records -->
+                        <div class="nav-section">
+                            <button class="nav-section-header" onclick="toggleSection('patient-records')">
+                                <span>Patient Records</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="nav-section-content" id="patient-records">
+                                <a href="#creating-records" class="nav-item" data-category="patient-records" data-tags="create,new,patient">Creating Patient Records</a>
+                                <a href="#updating-records" class="nav-item" data-category="patient-records" data-tags="update,edit,modify">Updating Records</a>
+                                <a href="#record-search" class="nav-item" data-category="patient-records" data-tags="search,find,lookup">Searching Records</a>
+                                <a href="#data-privacy" class="nav-item" data-category="patient-records" data-tags="privacy,hipaa,security">Data Privacy & HIPAA</a>
+                            </div>
+                        </div>
+
+                        <!-- Appointments -->
+                        <div class="nav-section">
+                            <button class="nav-section-header" onclick="toggleSection('appointments')">
+                                <span>Appointments</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="nav-section-content" id="appointments">
+                                <a href="#scheduling" class="nav-item" data-category="appointments" data-tags="schedule,book,calendar">Scheduling Appointments</a>
+                                <a href="#rescheduling" class="nav-item" data-category="appointments" data-tags="reschedule,change,modify">Rescheduling & Cancellations</a>
+                                <a href="#reminders" class="nav-item" data-category="appointments" data-tags="reminders,notifications,alerts">Appointment Reminders</a>
+                            </div>
+                        </div>
+
+                        <!-- Billing -->
+                        <div class="nav-section">
+                            <button class="nav-section-header" onclick="toggleSection('billing')">
+                                <span>Billing & Insurance</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="nav-section-content" id="billing">
+                                <a href="#insurance-verification" class="nav-item" data-category="billing" data-tags="insurance,verification,coverage">Insurance Verification</a>
+                                <a href="#billing-codes" class="nav-item" data-category="billing" data-tags="codes,cpt,icd">Billing Codes</a>
+                                <a href="#payment-processing" class="nav-item" data-category="billing" data-tags="payment,processing,transactions">Payment Processing</a>
+                            </div>
+                        </div>
+
+                        <!-- Troubleshooting -->
+                        <div class="nav-section">
+                            <button class="nav-section-header" onclick="toggleSection('troubleshooting')">
+                                <span>Troubleshooting</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="nav-section-content" id="troubleshooting">
+                                <a href="#common-issues" class="nav-item" data-category="troubleshooting" data-tags="issues,problems,errors">Common Issues</a>
+                                <a href="#error-codes" class="nav-item" data-category="troubleshooting" data-tags="errors,codes,messages">Error Codes</a>
+                                <a href="#contact-support" class="nav-item" data-category="troubleshooting" data-tags="support,help,contact">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content Area -->
+                <div class="content-area">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <a href="#home">Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current">Getting Started</span>
+                    </nav>
+
+                    <!-- Search Results (Hidden by default) -->
+                    <div class="search-results" id="searchResults" style="display: none;">
+                        <h2>Search Results</h2>
+                        <div class="search-results-list" id="searchResultsList"></div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <article class="article" id="mainContent">
+                        <header class="article-header">
+                            <h1>Welcome to HealthTech Pro Documentation</h1>
+                            <p class="article-subtitle">Comprehensive guide for healthcare professionals</p>
+                            <div class="article-meta">
+                                <span class="tag">Getting Started</span>
+                                <span class="tag">Overview</span>
+                                <span class="last-updated">Last updated: January 9, 2025</span>
+                            </div>
+                        </header>
+
+                        <div class="article-content">
+                            <section class="content-section">
+                                <h2>Quick Start Guide</h2>
+                                <p>HealthTech Pro is designed to streamline healthcare workflows for medical professionals. This documentation will help you get started quickly and efficiently.</p>
+                                
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zM10 5a1 1 0 100 2 1 1 0 000-2z" fill="#84cc16"/>
+                                        </svg>
+                                        <h3>Important Note</h3>
+                                    </div>
+                                    <p>All patient data is encrypted and HIPAA compliant. Please ensure you follow your organization's data handling policies.</p>
+                                </div>
+
+                                <h3>Key Features</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <strong>Patient Management:</strong> Comprehensive patient record system with search and filtering capabilities
+                                    </li>
+                                    <li>
+                                        <strong>Appointment Scheduling:</strong> Integrated calendar system with automated reminders
+                                    </li>
+                                    <li>
+                                        <strong>Billing Integration:</strong> Streamlined billing with insurance verification
+                                    </li>
+                                    <li>
+                                        <strong>Reporting:</strong> Generate detailed reports for practice management
+                                    </li>
+                                </ul>
+
+                                <h3>Getting Started Steps</h3>
+                                <ol class="step-list">
+                                    <li>
+                                        <strong>Account Setup:</strong> Create your user account and configure your profile
+                                    </li>
+                                    <li>
+                                        <strong>System Configuration:</strong> Set up your practice settings and preferences
+                                    </li>
+                                    <li>
+                                        <strong>User Training:</strong> Complete the onboarding modules for your role
+                                    </li>
+                                    <li>
+                                        <strong>Data Migration:</strong> Import existing patient data (if applicable)
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <section class="content-section">
+                                <h2>System Requirements</h2>
+                                <div class="requirements-grid">
+                                    <div class="requirement-card">
+                                        <h4>Web Browser</h4>
+                                        <ul>
+                                            <li>Chrome 90+</li>
+                                            <li>Firefox 88+</li>
+                                            <li>Safari 14+</li>
+                                            <li>Edge 90+</li>
+                                        </ul>
+                                    </div>
+                                    <div class="requirement-card">
+                                        <h4>Internet Connection</h4>
+                                        <ul>
+                                            <li>Minimum: 5 Mbps</li>
+                                            <li>Recommended: 25 Mbps</li>
+                                            <li>Stable connection required</li>
+                                        </ul>
+                                    </div>
+                                    <div class="requirement-card">
+                                        <h4>Device Specifications</h4>
+                                        <ul>
+                                            <li>RAM: 4GB minimum</li>
+                                            <li>Screen: 1024x768 minimum</li>
+                                            <li>Mobile responsive</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Feedback Section -->
+                        <div class="feedback-section">
+                            <h3>Was this helpful?</h3>
+                            <div class="feedback-buttons">
+                                <button class="feedback-btn positive" onclick="submitFeedback('positive')">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 1l2.5 5h5.5l-4.5 3.5 1.5 5.5L8 11l-4.5 3.5L5 9 0.5 6h5.5L8 1z" fill="currentColor"/>
+                                    </svg>
+                                    Yes
+                                </button>
+                                <button class="feedback-btn negative" onclick="submitFeedback('negative')">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 15l-2.5-5H0l4.5-3.5L3 1l5 3.5L13 1l-1.5 5.5L16 10h-5.5L8 15z" fill="currentColor"/>
+                                    </svg>
+                                    No
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- pagination  next and prev link-->
+                        <div class="pagination">
+                            <a href="#getting-started" class="prev">
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>Getting Started</span>
+                            </a>
+                            <a href="#sys-req" class="next">
+                                <span>System Requirements</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </article>
+
+                  
+                    <!-- Related Articles -->
+                    <aside class="related-articles">
+                        <h3>Related Articles</h3>
+                        <div class="related-list">
+                            <a href="#user-roles" class="related-item">
+                                <h4>User Roles & Permissions</h4>
+                                <p>Learn about different user types and access levels</p>
+                            </a>
+                            <a href="#account-setup" class="related-item">
+                                <h4>Account Setup</h4>
+                                <p>Step-by-step guide to setting up your account</p>
+                            </a>
+                            <a href="#system-requirements" class="related-item">
+                                <h4>System Requirements</h4>
+                                <p>Technical requirements for optimal performance</p>
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="#getting-started">Getting Started</a></li>
+                        <li><a href="#user-guide">User Guide</a></li>
+                        <li><a href="#api-reference">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#training">Training Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#hipaa">HIPAA Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthTech Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
