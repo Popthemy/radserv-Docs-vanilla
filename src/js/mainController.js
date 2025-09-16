@@ -1,14 +1,17 @@
 import * as model from './model.js'
-import navigationSectionView from './views/navgationSectionView.js';
+import relatedArticlesView from './views/relatedArticlesView.js';
+import articleView from './views/articleView.js';
 import * as helper from './utils/helper.js'
 
 
 const controlSection = function (href="#welcome"){
 
+
   model.loadSection(helper.normalizeHrefText(href));
 
-  console.log(model.state)
-  navigationSectionView.render(model.state)
+  // console.error(JSON.stringify(model.state))
+  relatedArticlesView.render(model.state.relatedArticles)
+  articleView.render(model.state.article)
 }
 
 const welcome = () => {
@@ -17,7 +20,7 @@ const welcome = () => {
 
 function init(){
  welcome()
- controlSection('#qui');
+ controlSection('#nice');
 }
 
 init();
