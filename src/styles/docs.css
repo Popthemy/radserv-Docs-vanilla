@@ -649,11 +649,13 @@ body {
 /* pagination */
 
 .pagination{
+  position: relative;
   display:grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   padding-top: var(--spacing-2xl);
 }
+
 
 .pagination a{
   display: flex;
@@ -666,10 +668,26 @@ body {
   text-decoration: none;
   color: var(--accent);
   place-items: center;
+  position: relative;
 }
 
 .pagination .prev .chevron{
   transform: rotate(180deg);
+}
+
+.pagination .next{
+  position: absolute;
+  right: 0;
+  top: 100%;
+  bottom: 0;
+  transform: translateY(-50%) ;
+}
+
+.pagination .prev{
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translateY(-50%) ;
 }
 
 /* Related Articles */
