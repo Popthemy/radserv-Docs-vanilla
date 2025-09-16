@@ -65,7 +65,7 @@ export default class View {
                 </svg>
               <span>${helper.normalizeHrefText(prevLink)}</span>
               </a>
-    `
+    `;
     
     const next = `
     <a href="${nextLink}" class="next">
@@ -81,7 +81,6 @@ export default class View {
                     ${prevLink? `${prev}` : ""}
                     ${nextLink? `${next}` : ""}
                 </div>
-    
     `;
 
     this._parentElement.insertAdjacentHTML("beforeend", html );
