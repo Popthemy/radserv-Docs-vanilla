@@ -13,6 +13,7 @@ class RelatedArticles extends View {
       relatedArticleElement.style.display = "none";
       return;
     } else {
+      relatedArticleElement.style.display = "block";
       return this._data
         .map(
           (article) => `

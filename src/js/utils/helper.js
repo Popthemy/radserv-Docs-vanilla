@@ -3,6 +3,8 @@
  * @param {string} href 
  * @returns Capitalized String
  */
+
+
 export function normalizeHrefText(href = "#getting-started") {
   if (typeof href !== "string" || href.charAt(0) !== "#") {
     throw Error(`Model: Invalid href type: ${href} should be a string and start with "#" `);
@@ -13,4 +15,11 @@ export function normalizeHrefText(href = "#getting-started") {
     .join(" ");
 
   return validTitle.length > 0 ? validTitle : "Home"
+}
+
+export function windowScrollToTop(){
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }

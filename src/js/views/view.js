@@ -7,17 +7,9 @@ export default class View {
 
   render(data) {
 
-    if (!data) return;
+    if (!data) return console.error('no data');
     this._data = data;
-
     this._parentElement.innerHTML = this._generateMarkup();
-
-    // refactor 
-    // this._relatedArticles = this._data.relatedArticles;
-  
-    // this.renderCurrentArticle()
-    // this._renderPagination()
-    // this._renderRelatedArticlesMarkup();
   }
 
   _generateMarkup(){

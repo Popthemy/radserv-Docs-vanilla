@@ -91,7 +91,7 @@ export function getDataRelatedArticles(section){
 
 export function getDataArticle(section){
   const articles = {
-    "Welcome": {
+    "Quick Start": {
       pagination: { prev: "#quick-start", next: "#system-requirements" },
       template: getArticlesTemplate(section),
     },
@@ -150,8 +150,8 @@ function generateSearchContent(title) {
 
 
 function getArticlesTemplate(section){
-  const templates ={
-    'Welcome':`
+  const templates = {
+    "Quick Start": `
                          <header class="article-header">
                             <h1>Welcome to HealthTech Pro Documentation loaded from data.js</h1>
                             <p class="article-subtitle">Comprehensive guide for healthcare professionals</p>
@@ -243,9 +243,7 @@ function getArticlesTemplate(section){
                         </div>
 
     `,
-    
-
-  }
+  };
 
   function defaultTemplate(section){
     return  `
