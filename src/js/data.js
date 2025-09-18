@@ -105,7 +105,7 @@ export function getDataArticle(section){
 }
 
 
-function generateSearchContent(title) {
+export function generateSearchContent(title) {
     const contentMap = {
       "Quick Start Guide":
         "Get started with HealthTech Pro quickly. Learn the basics of patient management, appointment scheduling, and system navigation.",
@@ -146,102 +146,119 @@ function generateSearchContent(title) {
       "Contact Support":
         "Get help from our technical support team through various channels including phone, email, and chat.",
     };
+
+    return contentMap[title];
   }
 
 
 function getArticlesTemplate(section){
   const templates = {
     "Quick Start": `
-                         <header class="article-header">
-                            <h1>Welcome to HealthTech Pro Documentation loaded from data.js</h1>
-                            <p class="article-subtitle">Comprehensive guide for healthcare professionals</p>
-                            <div class="article-meta">
-                                <span class="tag">Getting Started</span>
-                                <span class="tag">Overview</span>
-                                <span class="last-updated">Last updated: January 9, 2025</span>
+                  <header class="article-header">
+                    <h1>Welcome to HealthTech Pro Documentation loaded from data.js</h1>
+                    <p class="article-subtitle">Comprehensive guide for healthcare professionals</p>
+                    <div class="article-meta">
+                        <span class="tag">Getting Started</span>
+                        <span class="tag">Overview</span>
+                        <span class="last-updated">Last updated: January 9, 2025</span>
+                    </div>
+                  </header>
+
+                  <div class="article-content">
+                    <section class="content-section">
+                        <h2>Quick Start Guide</h2>
+                        <p>HealthTech Pro is designed to streamline healthcare workflows for medical professionals. This documentation will help you get started quickly and efficiently.</p>
+                        
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zM10 5a1 1 0 100 2 1 1 0 000-2z" fill="#84cc16"/>
+                                </svg>
+                                <h3>Important Note</h3>
                             </div>
-                        </header>
-
-                        <div class="article-content">
-                            <section class="content-section">
-                                <h2>Quick Start Guide</h2>
-                                <p>HealthTech Pro is designed to streamline healthcare workflows for medical professionals. This documentation will help you get started quickly and efficiently.</p>
-                                
-                                <div class="info-card">
-                                    <div class="info-card-header">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zM10 5a1 1 0 100 2 1 1 0 000-2z" fill="#84cc16"/>
-                                        </svg>
-                                        <h3>Important Note</h3>
-                                    </div>
-                                    <p>All patient data is encrypted and HIPAA compliant. Please ensure you follow your organization's data handling policies.</p>
-                                </div>
-
-                                <h3>Key Features</h3>
-                                <ul class="feature-list">
-                                    <li>
-                                        <strong>Patient Management:</strong> Comprehensive patient record system with search and filtering capabilities
-                                    </li>
-                                    <li>
-                                        <strong>Appointment Scheduling:</strong> Integrated calendar system with automated reminders
-                                    </li>
-                                    <li>
-                                        <strong>Billing Integration:</strong> Streamlined billing with insurance verification
-                                    </li>
-                                    <li>
-                                        <strong>Reporting:</strong> Generate detailed reports for practice management
-                                    </li>
-                                </ul>
-
-                                <h3>Getting Started Steps</h3>
-                                <ol class="step-list">
-                                    <li>
-                                        <strong>Account Setup:</strong> Create your user account and configure your profile
-                                    </li>
-                                    <li>
-                                        <strong>System Configuration:</strong> Set up your practice settings and preferences
-                                    </li>
-                                    <li>
-                                        <strong>User Training:</strong> Complete the onboarding modules for your role
-                                    </li>
-                                    <li>
-                                        <strong>Data Migration:</strong> Import existing patient data (if applicable)
-                                    </li>
-                                </ol>
-                            </section>
-
-                            <section class="content-section">
-                                <h2>System Requirements</h2>
-                                <div class="requirements-grid">
-                                    <div class="requirement-card">
-                                        <h4>Web Browser</h4>
-                                        <ul>
-                                            <li>Chrome 90+</li>
-                                            <li>Firefox 88+</li>
-                                            <li>Safari 14+</li>
-                                            <li>Edge 90+</li>
-                                        </ul>
-                                    </div>
-                                    <div class="requirement-card">
-                                        <h4>Internet Connection</h4>
-                                        <ul>
-                                            <li>Minimum: 5 Mbps</li>
-                                            <li>Recommended: 25 Mbps</li>
-                                            <li>Stable connection required</li>
-                                        </ul>
-                                    </div>
-                                    <div class="requirement-card">
-                                        <h4>Device Specifications</h4>
-                                        <ul>
-                                            <li>RAM: 4GB minimum</li>
-                                            <li>Screen: 1024x768 minimum</li>
-                                            <li>Mobile responsive</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </section>
+                            <p>All patient data is encrypted and HIPAA compliant. Please ensure you follow your organization's data handling policies.</p>
                         </div>
 
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li>
+                                <strong>Patient Management:</strong> Comprehensive patient record system with search and filtering capabilities
+                            </li>
+                            <li>
+                                <strong>Appointment Scheduling:</strong> Integrated calendar system with automated reminders
+                            </li>
+                            <li>
+                                <strong>Billing Integration:</strong> Streamlined billing with insurance verification
+                            </li>
+                            <li>
+                                <strong>Reporting:</strong> Generate detailed reports for practice management
+                            </li>
+                        </ul>
+
+                        <h3>Getting Started Steps</h3>
+                        <ol class="step-list">
+                            <li>
+                                <strong>Account Setup:</strong> Create your user account and configure your profile
+                            </li>
+                            <li>
+                                <strong>System Configuration:</strong> Set up your practice settings and preferences
+                            </li>
+                            <li>
+                                <strong>User Training:</strong> Complete the onboarding modules for your role
+                            </li>
+                            <li>
+                                <strong>Data Migration:</strong> Import existing patient data (if applicable)
+                            </li>
+                        </ol>
+                    </section>
+                    </div>
+
+                    <section class="content-section">
+                        <h2>System Requirements</h2>
+                        <div class="requirements-grid">
+                            <div class="requirement-card">
+                                <h4>Web Browser</h4>
+                                <ul>
+                                    <li>Chrome 90+</li>
+                                    <li>Firefox 88+</li>
+                                    <li>Safari 14+</li>
+                                    <li>Edge 90+</li>
+                                </ul>
+                            </div>
+                            <div class="requirement-card">
+                                <h4>Internet Connection</h4>
+                                <ul>
+                                    <li>Minimum: 5 Mbps</li>
+                                    <li>Recommended: 25 Mbps</li>
+                                    <li>Stable connection required</li>
+                                </ul>
+                            </div>
+                            <div class="requirement-card">
+                                <h4>Device Specifications</h4>
+                                <ul>
+                                    <li>RAM: 4GB minimum</li>
+                                    <li>Screen: 1024x768 minimum</li>
+                                    <li>Mobile responsive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                  </div>
+
+                  <div class="pagination">
+                          <a href="#getting-started" class="prev">
+                              <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                  <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                              </svg>
+                              <span>Getting Started</span>
+                          </a>
+                          <a href="#sys-req" class="next">
+                              <span>System Requirements</span>
+                              <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                  <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                              </svg>
+                          </a>
+                  </div>
     `,
   };
 

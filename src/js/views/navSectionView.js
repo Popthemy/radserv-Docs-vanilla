@@ -6,7 +6,9 @@ class NavSection {
   addHandlerHrefs(handler) {
   
     document.querySelector('.content-wrapper').addEventListener('click', (event)=>{
-      const link = event.target.closest('.related-item, .nav-item');
+      const link = event.target.closest(
+        ".related-item, .nav-item, .search-result-item"
+      );
       if (!link) return;
 
       event.preventDefault();
@@ -35,6 +37,8 @@ class NavSection {
       });
     });
   }
+
+  
 }
 
 export default new NavSection();

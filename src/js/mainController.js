@@ -4,8 +4,8 @@ import relatedArticlesView from "./views/relatedArticlesView.js";
 import articleView from "./views/articleView.js";
 import navSectionView from "./views/navSectionView.js";
 import breadcrumbView from "./views/breadcrumbView.js";
-
-
+import mobileNavView from "./views/mobileNav.js";
+import searchView from "./views/searchView.js";
 
 function controlSection(href = "#welcome") {
   model.loadSection(helper.normalizeHrefText(href));
@@ -13,7 +13,6 @@ function controlSection(href = "#welcome") {
   articleView.render(model.state.article);
   relatedArticlesView.render(model.state.relatedArticles);
   helper.windowScrollToTop();
-  // console.error(JSON.stringify(model.state))
 }
 
 function controlLinks(event) {
@@ -22,14 +21,24 @@ function controlLinks(event) {
   controlSection(href);
 }
 
+function controlSearchResult(query) {
+  console.log("i begin controller sea", query);
+  model.loadSearchData(query);
+  model.state.searchData;
+
+  // console.error(JSON.stringify(model.state.searchResult))
+  searchView.render({"query":query, "result":model.state.searchResult});
+}
+
 const welcome = () => {
-  console.log("Welcome to RadServ User Guide!!!");
+  console.log("Welcome to HealthTech Pro User Guide!!!");
 };
 
 function init() {
   welcome();
   controlSection("#quick-start");
   navSectionView.addHandlerHrefs(controlLinks);
+  searchView.addHandlerSearchInput(controlSearchResult);
 }
 
 init();

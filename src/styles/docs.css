@@ -654,6 +654,7 @@ body {
   grid-template-columns: auto auto;
   justify-content: space-between;
   padding-top: var(--spacing-2xl);
+  height: 50px;
 }
 
 
@@ -678,15 +679,14 @@ body {
 .pagination .next{
   position: absolute;
   right: 0;
-  top: 100%;
-  bottom: 0;
+  top: 50%;
   transform: translateY(-50%) ;
 }
 
 .pagination .prev{
   position: absolute;
   left: 0;
-  top: 100%;
+  top: 50%;
   transform: translateY(-50%) ;
 }
 

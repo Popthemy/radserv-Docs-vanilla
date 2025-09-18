@@ -7,7 +7,6 @@ class Breadcrumb extends View{
     const paths = this._breadcrumbPathGenerator(this._data);
     
     let markup = "<a href='#'>Home</a>";
-
     if (!paths) return markup;
 
     paths.forEach((path,index) => {
