@@ -7,11 +7,13 @@ import breadcrumbView from "./views/breadcrumbView.js";
 import mobileNavView from "./views/mobileNav.js";
 import searchView from "./views/searchView.js";
 
+
 function controlSection(href = "#welcome") {
   model.loadSection(helper.normalizeHrefText(href));
   breadcrumbView.render(href);
   articleView.render(model.state.article);
   relatedArticlesView.render(model.state.relatedArticles);
+  searchView.hideSearchContainer()
   helper.windowScrollToTop();
 }
 
